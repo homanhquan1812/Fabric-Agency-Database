@@ -1,0 +1,88 @@
+
+        {{#if styles}}
+            {{#each styles}}
+                <link rel="stylesheet" href="{{this}}">
+            {{/each}}
+        {{/if}}
+
+
+        <div class="mt-4">
+            <h1>Material Purchasing Information</h1>
+            <br>
+            <!--
+            <div class="submit-button">
+                <button type="button" class="btn btn-primary" style="margin: 0 0 15px 15px;" onclick="window.location.href='/info/create'">Add more suppliers</button>
+            </div>
+            -->
+
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+            <table id="myTable1">
+                <thead>
+                    <tr class="header">
+                    <th>No</th>
+                    <th>Supplier ID</th>
+                    <th>Name</th>
+                    <th>Phone Number</th>
+                    <th>Address</th>
+                    <th>Bank Account</th>
+                    <th>Tax Code</th>
+                    <th>Employee ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#if DatabaseInfoQ1a.length}}
+                        {{#each DatabaseInfoQ1a}}
+                            <tr>
+                                <td>{{sum @index 1}}</td>
+                                <td>{{SUP_ID}}</td>
+                                <td>{{SUP_NAME}}</td>
+                                <td>{{SUP_PHONE_NUMBER}}</td>
+                                <td>{{SUP_ADDR}}</td>
+                                <td>{{SUP_BANKACC}}</td>
+                                <td>{{SUP_TAXCODE}}</td>
+                                <td>{{E_ID}}</td>
+                            </tr>
+                        {{/each}}
+                    {{else}}
+                    <tr>
+                        <td colspan="4">No data available</td>
+                    </tr>
+                    {{/if}}
+                </tbody>
+            </table>
+
+            <br>
+
+            <table id="myTable2">
+                <thead>
+                    <tr class="header">
+                    <th>No</th>
+                    <th>Supplier ID</th>
+                    <th>Fabric ID</th>
+                    <th>Purchase Date</th>
+                    <th>Purchase Price</th>
+                    <th>Supply Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#if DatabaseInfoQ1b.length}}
+                        {{#each DatabaseInfoQ1b}}
+                            <tr>
+                                <td>{{sum @index 1}}</td>
+                                <td>{{SUP_ID}}</td>
+                                <td>{{FAB_ID}}</td>
+                                <td>{{PURCHASE_DATE}}</td>
+                                <td>{{PURCHASE_PRICE}}</td>
+                                <td>{{SUP_QUANTITY}}</td>
+                            </tr>
+                        {{/each}}
+                    {{else}}
+                    <tr>
+                        <td colspan="4">No data available</td>
+                    </tr>
+                    {{/if}}
+                </tbody>
+            </table>
+
+        </div>

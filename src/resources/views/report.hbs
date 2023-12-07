@@ -1,0 +1,273 @@
+        {{#if styles}}
+            {{#each styles}}
+                <link rel="stylesheet" href="{{this}}">
+            {{/each}}
+        {{/if}}
+
+        <div class="mt-4">
+            <h1>Customer's Order Report</h1>
+            <br>
+            <!--
+            <div class="submit-button">
+                <button type="button" class="btn btn-primary" style="margin: 0 0 15px 15px;" onclick="window.location.href='/info/create'">Add more suppliers</button>
+            </div>
+            -->
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+            <h2>Customer's Information</h2>
+            <table id="myTable" style="margin-bottom: 50px;">
+            <thead>
+                <tr class="header">
+                <th>No</th>
+                <th>Customer ID</th>
+                <th>Full name</th>
+                <th>Arrearage</th>
+                <th>Address</th>
+                <th>Employee ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#if DatabaseInfoQ4a.length}} <!-- Check if DatabaseInfo is not empty -->
+                    {{#each DatabaseInfoQ4a}}
+                        <tr>
+                            <td>{{sum @index 1}}</td> <!-- Use @index to get the row number -->
+                            <td>{{CUS_ID}}</td> <!-- Replace "name" with the actual property in your DatabaseInfo object -->
+                            <td>{{CUS_FNAME}} {{CUS_LNAME}}</td> <!-- Replace "phoneNumber" with the actual property in your DatabaseInfo object -->
+                            <td>{{CUS_ARREARAGE}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
+                            <td>{{CUS_ADDR}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
+                            <td>{{EMP_ID}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
+                        </tr>
+                    {{/each}}
+                {{else}}
+                <tr>
+                    <td colspan="5">No data available</td>
+                </tr>
+                {{/if}}
+            </tbody>
+            </table>
+            
+            <hr>
+
+            <div style="margin-top: 30px;">
+                <h2>Order's Information</h2>
+                <table id="myTable"  style="margin-bottom: 50px;">
+                <thead>
+                    <tr class="header">
+                    <th>No</th>
+                    <th>Order ID</th>
+                    <th>Price</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                    <th>Employee ID</th>
+                    <th>Customer ID</th>
+                    <th>Unpaid Debt</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#if DatabaseInfoQ4b.length}} <!-- Check if DatabaseInfo is not empty -->
+                        {{#each DatabaseInfoQ4b}}
+                            <tr>
+                                <td>{{sum @index 1}}</td> <!-- Use @index to get the row number -->
+                                <td>{{ORDER_ID}}</td> <!-- Replace "name" with the actual property in your DatabaseInfo object -->
+                                <td>{{ORDER_PRICE}}</td> <!-- Replace "phoneNumber" with the actual property in your DatabaseInfo object -->
+                                <td>{{ORDER_STATUS}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
+                                <td>{{PROC_DATE}}</td> <!-- Replace "name" with the actual property in your DatabaseInfo object -->
+                                <td>{{EMP_ID}}</td> <!-- Replace "phoneNumber" with the actual property in your DatabaseInfo object -->
+                                <td>{{CUS_ID}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
+                                <td>{{ORDER_UNPAID_DEBT}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
+                            </tr>
+                        {{/each}}
+                    {{else}}
+                    <tr>
+                        <td colspan="6">No data available</td>
+                    </tr>
+                    {{/if}}
+                </tbody>
+                </table>
+            </div>
+
+            <hr>
+
+            <div style="margin-top: 30px;">
+                <h2>Fabric Bolts</h2>
+                <table id="myTable"  style="margin-bottom: 50px;">
+                <thead>
+                    <tr class="header">
+                    <th>No</th>
+                    <th>Bolt ID</th>
+                    <th>Length</th>
+                    <th>Fabric ID</th>
+                    <th>Order ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#if DatabaseInfoQ4c.length}} <!-- Check if DatabaseInfo is not empty -->
+                        {{#each DatabaseInfoQ4c}}
+                            <tr>
+                                <td>{{sum @index 1}}</td> <!-- Use @index to get the row number -->
+                                <td>{{BOLT_ID}}</td> <!-- Replace "name" with the actual property in your DatabaseInfo object -->
+                                <td>{{BOLT_LENGTH}}</td> <!-- Replace "phoneNumber" with the actual property in your DatabaseInfo object -->
+                                <td>{{FAB_ID}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
+                                <td>{{ORDER_ID}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
+                            </tr>
+                        {{/each}}
+                    {{else}}
+                    <tr>
+                        <td colspan="6">No data available</td>
+                    </tr>
+                    {{/if}}
+                </tbody>
+                </table>
+            </div>
+
+            <hr>
+
+            <div style="margin-top: 30px;">
+                <h2>Fabric Cagetories</h2>
+                <table id="myTable" style="margin-bottom: 50px;">
+                <thead>
+                    <tr class="header">
+                    <th>No</th>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Color</th>
+                    <th>Quantity</th>
+                    <th>Supplier ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#if DatabaseInfoQ4d.length}} <!-- Check if DatabaseInfo is not empty -->
+                        {{#each DatabaseInfoQ4d}}
+                            <tr>
+                                <td>{{sum @index 1}}</td> <!-- Use @index to get the row number -->
+                                <td>{{FAB_ID}}</td> <!-- Replace "name" with the actual property in your DatabaseInfo object -->
+                                <td>{{FAB_NAME}}</td> <!-- Replace "phoneNumber" with the actual property in your DatabaseInfo object -->
+                                <td>{{FAB_COLOR}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
+                                <td>{{FAB_QUANTITY}}</td> <!-- Replace "phoneNumber" with the actual property in your DatabaseInfo object -->
+                                <td>{{SUP_ID}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
+                            </tr>
+                        {{/each}}
+                    {{else}}
+                    <tr>
+                        <td colspan="6">No data available</td>
+                    </tr>
+                    {{/if}}
+                </tbody>
+                </table>
+            </div>
+
+            <hr>
+            
+            <div style="margin-top: 30px;">
+                <h2>Supplier's Information</h2>
+                <table id="myTable" style="margin-bottom: 50px;">
+                <thead>
+                    <tr class="header">
+                    <th>No</th>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Phone Number</th>
+                    <th>Address</th>
+                    <th>Bank Account</th>
+                    <th>Tax Code</th>
+                    <th>Employee ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#if DatabaseInfoQ4e.length}} <!-- Check if DatabaseInfo is not empty -->
+                        {{#each DatabaseInfoQ4e}}
+                            <tr>
+                                <td>{{sum @index 1}}</td> <!-- Use @index to get the row number -->
+                                <td>{{SUP_ID}}</td> <!-- Replace "name" with the actual property in your DatabaseInfo object -->
+                                <td>{{SUP_NAME}}</td> <!-- Replace "phoneNumber" with the actual property in your DatabaseInfo object -->
+                                <td>{{SUP_PHONE_NUMBER}}</td> <!-- Replace "name" with the actual property in your DatabaseInfo object -->
+                                <td>{{SUP_ADDR}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
+                                <td>{{SUP_BANKACC}}</td> <!-- Replace "phoneNumber" with the actual property in your DatabaseInfo object -->
+                                <td>{{SUP_TAXCODE}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
+                                <td>{{E_ID}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
+                            </tr>
+                        {{/each}}
+                    {{else}}
+                    <tr>
+                        <td colspan="6">No data available</td>
+                    </tr>
+                    {{/if}}
+                </tbody>
+                </table>
+            </div>
+
+                <hr>
+
+            <div style="margin-top: 30px;">
+                <h2>Payments</h2>
+                    <table id="myTable" style="margin-bottom: 50px;">
+                    <thead>
+                        <tr class="header">
+                        <th>No</th>
+                        <th>ID</th>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Order ID</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#if DatabaseInfoQ4f.length}} <!-- Check if DatabaseInfo is not empty -->
+                            {{#each DatabaseInfoQ4f}}
+                                <tr>
+                                    <td>{{sum @index 1}}</td> <!-- Use @index to get the row number -->
+                                    <td>{{PAY_ID}}</td> <!-- Replace "name" with the actual property in your DatabaseInfo object -->
+                                    <td>{{PAY_DATE}}</td> <!-- Replace "phoneNumber" with the actual property in your DatabaseInfo object -->
+                                    <td>{{PAY_AMOUNT}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
+                                    <td>{{ORDER_ID}}</td> <!-- Replace "name" with the actual property in your DatabaseInfo object -->
+                                </tr>
+                            {{/each}}
+                        {{else}}
+                        <tr>
+                            <td colspan="6">No data available</td>
+                        </tr>
+                        {{/if}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <hr>
+
+        <div style="margin-top: 30px;">
+            <h2>Employees In Charge</h2>
+                <table id="myTable" style="margin-bottom: 50px;">
+                    <thead>
+                        <tr class="header">
+                        <th>No</th>
+                        <th>ID</th>
+                        <th>Full Name</th>
+                        <th>Gender</th>
+                        <th>Phone Number</th>
+                        <th>Address</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            {{#each DatabaseInfoQ4g_a}}
+                                <tr>
+                                    <td>{{sum @index 1}}</td> <!-- Use @index to get the row number -->
+                                    <td>{{EMP_ID}}</td> <!-- Replace "name" with the actual property in your DatabaseInfo object -->
+                                    <td>{{EMP_FNAME}} {{EMP_LNAME}}</td> <!-- Replace "phoneNumber" with the actual property in your DatabaseInfo object -->
+                                    <td>{{EMP_GENDER}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
+                                    <td>{{EMP_PHONE_NUMBER}}</td>
+                                    <td>{{E_ADDR}}</td>
+                                </tr>
+                            {{/each}}
+                            {{#each DatabaseInfoQ4g_b}}
+                                <tr>
+                                    <td>{{sum @index 1}}</td> <!-- Use @index to get the row number -->
+                                    <td>{{EMP_ID}}</td> <!-- Replace "name" with the actual property in your DatabaseInfo object -->
+                                    <td>{{EMP_FNAME}} {{EMP_LNAME}}</td> <!-- Replace "phoneNumber" with the actual property in your DatabaseInfo object -->
+                                    <td>{{EMP_GENDER}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
+                                    <td>{{EMP_PHONE_NUMBER}}</td>
+                                    <td>{{E_ADDR}}</td>
+                                </tr>
+                            {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>

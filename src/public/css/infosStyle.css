@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+  }
+
+body .home {
+    position: relative; /* usually the parent, in this case the body element, has position relative so that the absolute positioned child is positioned relative to it */
+    height: 80vh; /* 100% of the viewport height */
+    margin: 0; /* recommended */
+}
+  
+.home h1 {
+   position: absolute; /* taken out of the normal flow of the document */
+   font-size: 60px;
+   color: red;
+   top: 25%; /* moved down by 50% of the screen height */
+   transform: translateY(-50%); /* moved back up (Y axis) by half of its height to achieve the perfect center */
+   width: 100%; /* needs to be defined to keep the default block behavior */
+   text-align: center;
+   margin: 0; /* again, for perfect center */
+}
+
+.home h2 {
+    position: absolute; /* taken out of the normal flow of the document */
+    top: 50%; /* moved down by 50% of the screen height */
+    transform: translateY(-50%); /* moved back up (Y axis) by half of its height to achieve the perfect center */
+    width: 100%; /* needs to be defined to keep the default block behavior */
+    text-align: center;
+    margin: 0; /* again, for perfect center */
+ }
+  
+#myInput {
+    background-image: url('/img/searchicon.ico');
+    background-size: 25px 25px;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+}
+
+/* myTable1 */ 
+#myTable {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 18px;
+}
+  
+#myTable th, #myTable td {
+    text-align: left;
+    padding: 12px;
+}
+  
+#myTable tr {
+    border-bottom: 1px solid #ddd;
+}
+  
+#myTable tr.header, #myTable tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+/* myTable1 */ 
+#myTable1 {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 18px;
+}
+  
+#myTable1 th, #myTable1 td {
+    text-align: left;
+    padding: 12px;
+}
+  
+#myTable1 tr {
+    border-bottom: 1px solid #ddd;
+}
+  
+#myTable1 tr.header, #myTable1 tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* myTable2 */ 
+#myTable2 {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 18px;
+}
+  
+#myTable2 th, #myTable2 td {
+    text-align: left;
+    padding: 12px;
+}
+  
+#myTable2 tr {
+    border-bottom: 1px solid #ddd;
+}
+  
+#myTable2 tr.header, #myTable2 tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* myTable3 */ 
+#myTable3 {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 18px;
+}
+  
+#myTable3 th, #myTable3 td {
+    text-align: left;
+    padding: 12px;
+}
+  
+#myTable3 tr {
+    border-bottom: 1px solid #ddd;
+}
+  
+#myTable3 tr.header, #myTable3 tr:hover {
+    background-color: #f1f1f1;
+}
+
+.form-group label {
+    margin: 20px 0;
+}
+
+h1, h2 {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+.submit-button {
+    display:flex; 
+    justify-content: center; 
+    align-items: center;
+}

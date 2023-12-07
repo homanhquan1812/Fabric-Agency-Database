@@ -1,0 +1,45 @@
+            {{#if styles}}
+                {{#each styles}}
+                    <link rel="stylesheet" href="{{this}}">
+                {{/each}}
+            {{/if}}
+            
+            <div class="mt-4">
+                <div style="margin-top: 30px;">
+                    <h1>Fabric Cagetories</h1>
+                    <br>
+
+                    <input type="text" id="myInput" onkeyup="myFunction2()" placeholder="Search for names.." title="Type in a name">
+
+                    <table id="myTable3" style="margin-bottom: 50px;">
+                    <thead>
+                        <tr class="header">
+                        <th>No</th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Color</th>
+                        <th>Quantity</th>
+                        <th>Supplier ID</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#if DatabaseInfoQ4d.length}} <!-- Check if DatabaseInfo is not empty -->
+                            {{#each DatabaseInfoQ4d}}
+                                <tr>
+                                    <td>{{sum @index 1}}</td> <!-- Use @index to get the row number -->
+                                    <td>{{FAB_ID}}</td> <!-- Replace "name" with the actual property in your DatabaseInfo object -->
+                                    <td>{{FAB_NAME}}</td> <!-- Replace "phoneNumber" with the actual property in your DatabaseInfo object -->
+                                    <td>{{FAB_COLOR}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
+                                    <td>{{FAB_QUANTITY}}</td> <!-- Replace "phoneNumber" with the actual property in your DatabaseInfo object -->
+                                    <td>{{SUP_ID}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
+                                </tr>
+                            {{/each}}
+                        {{else}}
+                        <tr>
+                            <td colspan="6">No data available</td>
+                        </tr>
+                        {{/if}}
+                    </tbody>
+                    </table>
+                </div>
+            </div>
