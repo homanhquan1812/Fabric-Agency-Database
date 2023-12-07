@@ -28,19 +28,36 @@
                 // Adjust the table rows for the first table based on Name
                 tr = table1.getElementsByTagName("tr");
                 for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[2]; // Index 2 corresponds to the Name column
-                if (td) {
-                    txtValue = td.textContent || td.innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                    
-                    // Show corresponding rows in the second table based on Supplier ID
-                    var supplierID = tr[i].getElementsByTagName("td")[1].textContent || tr[i].getElementsByTagName("td")[1].innerText;
-                    showRowsInTable2(table2, supplierID);
-                    } else {
-                    tr[i].style.display = "none";
+                    td = tr[i].getElementsByTagName("td")[2]; // Index 2 corresponds to the Name column
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                        
+                        // Show corresponding rows in the second table based on Supplier ID
+                        var supplierID = tr[i].getElementsByTagName("td")[1].textContent || tr[i].getElementsByTagName("td")[1].innerText;
+                        showRowsInTable2(table2, supplierID);
+                        } else {
+                        tr[i].style.display = "none";
+                        }
                     }
                 }
+            }
+
+            // Function to show corresponding rows in the second table based on Supplier ID
+            function showRowsInTable2(table, supplierID) {
+                var tr, td, i, txtValue;
+                tr = table.getElementsByTagName("tr");
+                for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[1]; // Index 1 corresponds to the Supplier ID column
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue === supplierID) {
+                        tr[i].style.display = "";
+                        } else {
+                        tr[i].style.display = "none";
+                        }
+                    }
                 }
             }
 
@@ -63,21 +80,51 @@
                 }
             }
 
-            // Function to show corresponding rows in the second table based on Supplier ID
-            function showRowsInTable2(table, supplierID) {
-                var tr, td, i, txtValue;
-                tr = table.getElementsByTagName("tr");
+            function myFunction3() {
+                var input, filter, table4, table5, table6, table7, table8, table9, table10, tr, td, i, txtValue;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                table4 = document.getElementById("myTable4");
+                table5 = document.getElementById("myTable5");
+                table6 = document.getElementById("myTable6");
+                table7 = document.getElementById("myTable7");
+                table8 = document.getElementById("myTable8");
+                table9 = document.getElementById("myTable9");
+                table10 = document.getElementById("myTable10");
+                
+                // Adjust the table rows for the first table based on Name
+                tr = table4.getElementsByTagName("tr");
                 for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[1]; // Index 1 corresponds to the Supplier ID column
-                if (td) {
-                    txtValue = td.textContent || td.innerText;
-                    if (txtValue === supplierID) {
-                    tr[i].style.display = "";
-                    } else {
-                    tr[i].style.display = "none";
+                    td = tr[i].getElementsByTagName("td")[1]; // Index 1 corresponds to the Name column
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+
+                            // Show corresponding rows in the second table based on Supplier ID
+                            var supplierID = tr[i].getElementsByTagName("td")[1].textContent || tr[i].getElementsByTagName("td")[1].innerText;
+                            showRowsInTable3(table5, supplierID);
+                        } else {
+                            tr[i].style.display = "none";
+                        }
                     }
                 }
-                }
+            }
+
+            function showRowsInTable3(table5, supplierID) {
+                var tr, td, i, txtValue;
+                tr = table5.getElementsByTagName("tr");
+                for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[6]; // Index 6 corresponds to the Supplier ID column
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue === supplierID) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }      
             }
             </script>
 

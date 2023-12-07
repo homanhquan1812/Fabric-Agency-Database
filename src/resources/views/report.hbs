@@ -12,45 +12,45 @@
                 <button type="button" class="btn btn-primary" style="margin: 0 0 15px 15px;" onclick="window.location.href='/info/create'">Add more suppliers</button>
             </div>
             -->
-            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+            <input type="text" id="myInput" onkeyup="myFunction3()" placeholder="Search for names.." title="Type in a name">
 
             <h2>Customer's Information</h2>
-            <table id="myTable" style="margin-bottom: 50px;">
-            <thead>
-                <tr class="header">
-                <th>No</th>
-                <th>Customer ID</th>
-                <th>Full name</th>
-                <th>Arrearage</th>
-                <th>Address</th>
-                <th>Employee ID</th>
-                </tr>
-            </thead>
-            <tbody>
-                {{#if DatabaseInfoQ4a.length}} <!-- Check if DatabaseInfo is not empty -->
-                    {{#each DatabaseInfoQ4a}}
-                        <tr>
-                            <td>{{sum @index 1}}</td> <!-- Use @index to get the row number -->
-                            <td>{{CUS_ID}}</td> <!-- Replace "name" with the actual property in your DatabaseInfo object -->
-                            <td>{{CUS_FNAME}} {{CUS_LNAME}}</td> <!-- Replace "phoneNumber" with the actual property in your DatabaseInfo object -->
-                            <td>{{CUS_ARREARAGE}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
-                            <td>{{CUS_ADDR}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
-                            <td>{{EMP_ID}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
-                        </tr>
-                    {{/each}}
-                {{else}}
-                <tr>
-                    <td colspan="5">No data available</td>
-                </tr>
-                {{/if}}
-            </tbody>
+            <table id="myTable4" style="margin-bottom: 50px;">
+                <thead>
+                    <tr class="header">
+                    <th>No</th>
+                    <th>Customer ID</th>
+                    <th>Full name</th>
+                    <th>Arrearage</th>
+                    <th>Address</th>
+                    <th>Employee ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#if DatabaseInfoQ4a.length}} <!-- Check if DatabaseInfo is not empty -->
+                        {{#each DatabaseInfoQ4a}}
+                            <tr>
+                                <td>{{sum @index 1}}</td> <!-- Use @index to get the row number -->
+                                <td>{{CUS_ID}}</td> <!-- Replace "name" with the actual property in your DatabaseInfo object -->
+                                <td>{{CUS_FNAME}} {{CUS_LNAME}}</td> <!-- Replace "phoneNumber" with the actual property in your DatabaseInfo object -->
+                                <td>{{CUS_ARREARAGE}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
+                                <td>{{CUS_ADDR}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
+                                <td>{{EMP_ID}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
+                            </tr>
+                        {{/each}}
+                    {{else}}
+                    <tr>
+                        <td colspan="5">No data available</td>
+                    </tr>
+                    {{/if}}
+                </tbody>
             </table>
             
             <hr>
 
             <div style="margin-top: 30px;">
                 <h2>Order's Information</h2>
-                <table id="myTable"  style="margin-bottom: 50px;">
+                <table id="myTable5"  style="margin-bottom: 50px;">
                 <thead>
                     <tr class="header">
                     <th>No</th>
@@ -90,7 +90,7 @@
 
             <div style="margin-top: 30px;">
                 <h2>Fabric Bolts</h2>
-                <table id="myTable"  style="margin-bottom: 50px;">
+                <table id="myTable6"  style="margin-bottom: 50px;">
                 <thead>
                     <tr class="header">
                     <th>No</th>
@@ -124,7 +124,7 @@
 
             <div style="margin-top: 30px;">
                 <h2>Fabric Cagetories</h2>
-                <table id="myTable" style="margin-bottom: 50px;">
+                <table id="myTable7" style="margin-bottom: 50px;">
                 <thead>
                     <tr class="header">
                     <th>No</th>
@@ -160,7 +160,7 @@
             
             <div style="margin-top: 30px;">
                 <h2>Supplier's Information</h2>
-                <table id="myTable" style="margin-bottom: 50px;">
+                <table id="myTable8" style="margin-bottom: 50px;">
                 <thead>
                     <tr class="header">
                     <th>No</th>
@@ -200,7 +200,7 @@
 
             <div style="margin-top: 30px;">
                 <h2>Payments</h2>
-                    <table id="myTable" style="margin-bottom: 50px;">
+                    <table id="myTable9" style="margin-bottom: 50px;">
                     <thead>
                         <tr class="header">
                         <th>No</th>
@@ -235,7 +235,7 @@
 
         <div style="margin-top: 30px;">
             <h2>Employees In Charge</h2>
-                <table id="myTable" style="margin-bottom: 50px;">
+                <table id="myTable10" style="margin-bottom: 50px;">
                     <thead>
                         <tr class="header">
                         <th>No</th>

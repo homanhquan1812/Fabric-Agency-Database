@@ -40,88 +40,23 @@ body .home {
     margin-bottom: 12px;
 }
 
-/* myTable1 */ 
-#myTable {
+#myTable, #myTable1, #myTable2, #myTable3, #myTable4, #myTable5, #myTable6, #myTable7, #myTable8, #myTable9, #myTable10 {
     border-collapse: collapse;
     width: 100%;
     border: 1px solid #ddd;
     font-size: 18px;
 }
   
-#myTable th, #myTable td {
+#myTable th, #myTable td, #myTable1 th, #myTable1 td, #myTable2 th, #myTable2 td, #myTable3 th, #myTable3 td, #myTable4 th, #myTable4 td, #myTable5 th, #myTable5 td, #myTable6 th, #myTable6 td, #myTable7 th, #myTable7 td, #myTable8 th, #myTable8 td, #myTable9 th, #myTable9 td, #myTable10 th, #myTable10 td {
     text-align: left;
     padding: 12px;
 }
   
-#myTable tr {
+#myTable tr, #myTable1 tr, #myTable2 tr, #myTable3 tr, #myTable4 tr, #myTable5 tr, #myTable6 tr, #myTable7 tr, #myTable8 tr, #myTable9 tr, #myTable10 tr {
     border-bottom: 1px solid #ddd;
 }
   
-#myTable tr.header, #myTable tr:hover {
-    background-color: #f1f1f1;
-}
-
-
-/* myTable1 */ 
-#myTable1 {
-    border-collapse: collapse;
-    width: 100%;
-    border: 1px solid #ddd;
-    font-size: 18px;
-}
-  
-#myTable1 th, #myTable1 td {
-    text-align: left;
-    padding: 12px;
-}
-  
-#myTable1 tr {
-    border-bottom: 1px solid #ddd;
-}
-  
-#myTable1 tr.header, #myTable1 tr:hover {
-    background-color: #f1f1f1;
-}
-
-/* myTable2 */ 
-#myTable2 {
-    border-collapse: collapse;
-    width: 100%;
-    border: 1px solid #ddd;
-    font-size: 18px;
-}
-  
-#myTable2 th, #myTable2 td {
-    text-align: left;
-    padding: 12px;
-}
-  
-#myTable2 tr {
-    border-bottom: 1px solid #ddd;
-}
-  
-#myTable2 tr.header, #myTable2 tr:hover {
-    background-color: #f1f1f1;
-}
-
-/* myTable3 */ 
-#myTable3 {
-    border-collapse: collapse;
-    width: 100%;
-    border: 1px solid #ddd;
-    font-size: 18px;
-}
-  
-#myTable3 th, #myTable3 td {
-    text-align: left;
-    padding: 12px;
-}
-  
-#myTable3 tr {
-    border-bottom: 1px solid #ddd;
-}
-  
-#myTable3 tr.header, #myTable3 tr:hover {
+#myTable tr.header, #myTable tr:hover, #myTable1 tr.header, #myTable1 tr:hover, #myTable2 tr.header, #myTable2 tr:hover, #myTable3 tr.header, #myTable3 tr:hover, #myTable4 tr.header, #myTable4 tr:hover, #myTable5 tr.header, #myTable5 tr:hover, #myTable6 tr.header, #myTable6 tr:hover, #myTable7 tr.header, #myTable7 tr:hover, #myTable8 tr.header, #myTable8 tr:hover, #myTable9 tr.header, #myTable9 tr:hover, #myTable10 tr.header, #myTable10 tr:hover {
     background-color: #f1f1f1;
 }
 
