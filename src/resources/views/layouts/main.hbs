@@ -104,6 +104,11 @@
                             // Show corresponding rows in the second table based on Supplier ID
                             var supplierID = tr[i].getElementsByTagName("td")[1].textContent || tr[i].getElementsByTagName("td")[1].innerText;
                             showRowsInTable3(table5, supplierID);
+                            showRowsInTable4(table6, supplierID);
+                            showRowsInTable5(table7, supplierID);
+                            showRowsInTable6(table8, supplierID);
+                            showRowsInTable7(table9, supplierID);
+                            showRowsInTable8(table10, supplierID);
                         } else {
                             tr[i].style.display = "none";
                         }
@@ -114,6 +119,86 @@
             function showRowsInTable3(table5, supplierID) {
                 var tr, td, i, txtValue;
                 tr = table5.getElementsByTagName("tr");
+                for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[6]; // Index 6 corresponds to the Supplier ID column
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue === supplierID) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }      
+            }
+
+            function showRowsInTable4(table6, supplierID) {
+                var tr, td, i, txtValue;
+                tr = table6.getElementsByTagName("tr");
+                for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[5]; // Index 6 corresponds to the Supplier ID column
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue === supplierID) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }      
+            }
+
+            function showRowsInTable5(table7, supplierID) {
+                var tr, td, i, txtValue;
+                tr = table7.getElementsByTagName("tr");
+                for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[6]; // Index 6 corresponds to the Supplier ID column
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue === supplierID) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }      
+            }
+
+            function showRowsInTable6(table8, supplierID) {
+                var tr, td, i, txtValue;
+                tr = table8.getElementsByTagName("tr");
+                for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[8]; // Index 6 corresponds to the Supplier ID column
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue === supplierID) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }      
+            }
+
+            function showRowsInTable7(table9, supplierID) {
+                var tr, td, i, txtValue;
+                tr = table9.getElementsByTagName("tr");
+                for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[5]; // Index 6 corresponds to the Supplier ID column
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue === supplierID) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }      
+            }
+
+            function showRowsInTable8(table10, supplierID) {
+                var tr, td, i, txtValue;
+                tr = table10.getElementsByTagName("tr");
                 for (i = 0; i < tr.length; i++) {
                     td = tr[i].getElementsByTagName("td")[6]; // Index 6 corresponds to the Supplier ID column
                     if (td) {

@@ -346,6 +346,36 @@ async function runQ4g_b() {
   }
 }
 
+// Q4g_c
+async function runQ4g_c() {
+  try {
+    const connection = await oracledb.getConnection({
+      user: "HR",
+      password: "12345678",
+      connectString: "localhost/xe"
+    });
+
+    const query = `
+      SELECT
+        s.*,
+        epn.emp_phone_number
+      FROM
+        HR.partner_staff s
+        LEFT JOIN HR.par_phone_num epn ON s.emp_id = epn.emp_id
+    `;
+
+    const result = await connection.execute(query);
+    const DatabaseInfoQ4g_c = result.rows;
+
+    await connection.close();
+
+    return DatabaseInfoQ4g_c;
+  } catch (error) {
+    console.error('Failed to connect or execute query.', error);
+    throw error; // Propagate the error to the caller
+  }
+}
+
 async function store(formData) {
   try {
     const connection = await oracledb.getConnection({
@@ -397,6 +427,7 @@ runQ4e()
 runQ4f()
 runQ4g_a()
 runQ4g_b()
+runQ4g_c()
 
 // app.get('/info', middleware, async(req, res) => {
 app.get('/info', async(req, res) => {
@@ -417,6 +448,7 @@ app.get('/report', async(req, res) => {
   const DatabaseInfoQ4f = await runQ4f()
   const DatabaseInfoQ4g_a = await runQ4g_a()
   const DatabaseInfoQ4g_b = await runQ4g_b()
+  const DatabaseInfoQ4g_c = await runQ4g_c()
   res.render('report', {
     styles: ['../css/infosStyle.css'],
     DatabaseInfoQ4a,
@@ -426,7 +458,8 @@ app.get('/report', async(req, res) => {
     DatabaseInfoQ4e,
     DatabaseInfoQ4f,
     DatabaseInfoQ4g_a,
-    DatabaseInfoQ4g_b
+    DatabaseInfoQ4g_b,
+    DatabaseInfoQ4g_c
 })})
 
 app.get('/categories', async(req, res) => {

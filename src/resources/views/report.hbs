@@ -12,7 +12,7 @@
                 <button type="button" class="btn btn-primary" style="margin: 0 0 15px 15px;" onclick="window.location.href='/info/create'">Add more suppliers</button>
             </div>
             -->
-            <input type="text" id="myInput" onkeyup="myFunction3()" placeholder="Search for names.." title="Type in a name">
+            <input type="text" id="myInput" onkeyup="myFunction3()" placeholder="Please type Customer ID." title="Type in a name">
 
             <h2>Customer's Information</h2>
             <table id="myTable4" style="margin-bottom: 50px;">
@@ -109,6 +109,7 @@
                                 <td>{{BOLT_LENGTH}}</td> <!-- Replace "phoneNumber" with the actual property in your DatabaseInfo object -->
                                 <td>{{FAB_ID}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
                                 <td>{{ORDER_ID}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
+                                <td style="display:none;">{{CUS_ID}}</td>
                             </tr>
                         {{/each}}
                     {{else}}
@@ -123,7 +124,7 @@
             <hr>
 
             <div style="margin-top: 30px;">
-                <h2>Fabric Cagetories</h2>
+                <h2>Fabric Categories</h2>
                 <table id="myTable7" style="margin-bottom: 50px;">
                 <thead>
                     <tr class="header">
@@ -145,6 +146,7 @@
                                 <td>{{FAB_COLOR}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
                                 <td>{{FAB_QUANTITY}}</td> <!-- Replace "phoneNumber" with the actual property in your DatabaseInfo object -->
                                 <td>{{SUP_ID}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
+                                <td style="display:none;">{{CUS_ID}}</td>
                             </tr>
                         {{/each}}
                     {{else}}
@@ -185,6 +187,7 @@
                                 <td>{{SUP_BANKACC}}</td> <!-- Replace "phoneNumber" with the actual property in your DatabaseInfo object -->
                                 <td>{{SUP_TAXCODE}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
                                 <td>{{E_ID}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
+                                <td style="display:none;">{{CUS_ID}}</td>
                             </tr>
                         {{/each}}
                     {{else}}
@@ -219,6 +222,7 @@
                                     <td>{{PAY_DATE}}</td> <!-- Replace "phoneNumber" with the actual property in your DatabaseInfo object -->
                                     <td>{{PAY_AMOUNT}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
                                     <td>{{ORDER_ID}}</td> <!-- Replace "name" with the actual property in your DatabaseInfo object -->
+                                    <td style="display:none;">{{CUS_ID}}</td>
                                 </tr>
                             {{/each}}
                         {{else}}
@@ -247,7 +251,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                            {{#each DatabaseInfoQ4g_a}}
+                            {{#each DatabaseInfoQ4g_a}} <!-- Office -->
                                 <tr>
                                     <td>{{sum @index 1}}</td> <!-- Use @index to get the row number -->
                                     <td>{{EMP_ID}}</td> <!-- Replace "name" with the actual property in your DatabaseInfo object -->
@@ -255,9 +259,10 @@
                                     <td>{{EMP_GENDER}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
                                     <td>{{EMP_PHONE_NUMBER}}</td>
                                     <td>{{E_ADDR}}</td>
+                                    <td style="display:none;">{{CUS_ID}}</td>
                                 </tr>
                             {{/each}}
-                            {{#each DatabaseInfoQ4g_b}}
+                            {{#each DatabaseInfoQ4g_b}} <!-- Operational -->
                                 <tr>
                                     <td>{{sum @index 1}}</td> <!-- Use @index to get the row number -->
                                     <td>{{EMP_ID}}</td> <!-- Replace "name" with the actual property in your DatabaseInfo object -->
@@ -265,6 +270,19 @@
                                     <td>{{EMP_GENDER}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
                                     <td>{{EMP_PHONE_NUMBER}}</td>
                                     <td>{{E_ADDR}}</td>
+                                    <td style="display:none;">{{CUS_ID}}</td>
+                                </tr>
+                            {{/each}}
+                            <br>
+                            {{#each DatabaseInfoQ4g_c}} <!-- Partner -->
+                                <tr>
+                                    <td>{{sum @index 1}}</td> <!-- Use @index to get the row number -->
+                                    <td>{{EMP_ID}}</td> <!-- Replace "name" with the actual property in your DatabaseInfo object -->
+                                    <td>{{EMP_FNAME}} {{EMP_LNAME}}</td> <!-- Replace "phoneNumber" with the actual property in your DatabaseInfo object -->
+                                    <td>{{EMP_GENDER}}</td> <!-- Replace "information" with the actual property in your DatabaseInfo object -->
+                                    <td>{{EMP_PHONE_NUMBER}}</td>
+                                    <td>{{E_ADDR}}</td>
+                                    <td style="display:none;">{{CUS_ID}}</td>
                                 </tr>
                             {{/each}}
                     </tbody>
