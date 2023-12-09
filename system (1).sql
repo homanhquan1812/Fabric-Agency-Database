@@ -1,0 +1,5 @@
+alter session set "_ORACLE_SCRIPT"=true;
+CREATE USER manager IDENTIFIED BY 12345678;
+GRANT CREATE SESSION TO manager;
+GRANT DBA TO manager;
+GRANT CREATE TABLE TO manager;
