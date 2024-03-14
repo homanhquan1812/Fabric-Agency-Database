@@ -8,5 +8,3 @@
 3. Hosting: (None).
 # Development Status:
 > End of support.
-# Contacts
-> homanhquan1812@gmail.com
